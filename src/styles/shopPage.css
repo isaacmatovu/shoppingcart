@@ -1,0 +1,14 @@
+
+.loaded-items{
+    width: 100%;
+   background-color: aqua;
+    height: 100vh;
+    top: 0;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    gap: 4px;
+    
+    
+}
+

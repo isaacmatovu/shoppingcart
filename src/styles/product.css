@@ -1,0 +1,56 @@
+.item{
+    padding: 3rem;
+    background-color: #d33a3a;
+    top: 5rem;
+    padding-top: 6rem;
+    
+}
+.itemcontent{
+    padding: 2rem;
+    background-color: #fff;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    border-bottom: 5px solid rgb(5, 4, 4);
+}
+.itemcontent:hover{
+ transform: scale(1.2);
+}
+.productimage{
+    width: 5rem;
+    height: 5rem;
+}
+button{
+    background-color: blue;
+    color: #fff;
+    border: 1px solid white;
+}
+button:hover{
+    background-color: rgb(27, 188, 241);
+    color: black;
+}
+button:active{
+    animation: shiver 1000ms;
+}
+@keyframes shiver{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(50px);
+    }
+}
+
+.button{
+    display: flex;
+}
+.button input{
+    width: 2rem;
+}
+h1{
+    font-size: 1rem;
+    color: black;
+}
