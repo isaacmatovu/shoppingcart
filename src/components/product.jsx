@@ -1,9 +1,9 @@
 import { useState,useContext} from 'react';
 import PropTypes from 'prop-types';
 import '../styles/product.css';
-
 import { CartContext } from './context';
 import NavBar from './NavBar';
+
 
 
 
@@ -39,11 +39,12 @@ export default function Product({ product }) {
 
   return (
     <>
-    <NavBar/>
+ <NavBar/>
       <div className="item">
         <div className="itemcontent">
           <h1>{title}</h1>
-          <img src={image} alt="item" className="productimage" />
+          <img src={image} alt="item" className="productimage"  srcSet={`${image} 400w, ${image} 800w, ${image} 1200w`} 
+              sizes = "(max-width: 400px) 100vw, (max-width: 800px) 50vw, 33vw"/>
           <p>UGX{price * quantity}</p>
           <div className="button">
             <button onClick={handleSubtract} disabled={quantity === 0} >

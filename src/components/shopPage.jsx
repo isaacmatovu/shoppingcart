@@ -1,6 +1,8 @@
 import { useState,useEffect } from "react"
+
 import '../styles/shopPage.css'
 import Product from "./product";
+
 
 
 
@@ -8,6 +10,7 @@ export default function Shop(){
     const [products,setProducts] = useState(null);
     const [loading,setLoading] = useState(true)
     const[error,setError] = useState(null)
+
 
     
     useEffect(()=>{
@@ -37,17 +40,17 @@ export default function Shop(){
     },[])
    
 
-
     
     return(
         <>
-    
        <div className="shopping">
         {loading && (<p>loading...</p>)}
         {error && <p>{error}</p>}
        {products && !error & !loading && (<div className="loaded-items">
         {products.map((product)=>(
+            <>
             <Product key={product.id} product={product}/>
+            </>
         ))}
        </div>)}
         

@@ -11,7 +11,7 @@ import Layout from "./layout";
 
 
 
-//import { element } from "prop-types";
+
 
 const routes=[
 
@@ -36,9 +36,11 @@ const routes=[
                 element:<Cart/>
             },
            
-        ]
+          
+        ],
+        
        
-    },
+    }
     
    
     

@@ -17,7 +17,10 @@
                 </p2>
             </div>
             <div className="rightside">
-                <img className='image1' src={img1} alt='happyperson' loading='lazy'/>
+                <img className='image1' src={img1} alt='happyperson' loading='lazy'
+                srcSet={`${img1} 400vw ,${img1} 800vw ,${img1} 1200vw`}
+                 sizes="(max-width: 400px) 100vw, (max-width: 800px) 50vw, 33vw"
+                />
             </div>
         </div>
         </div>

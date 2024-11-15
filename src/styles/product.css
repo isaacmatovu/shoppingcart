@@ -3,6 +3,7 @@
     background-color: #d33a3a;
     top: 5rem;
     padding-top: 6rem;
+   
     
 }
 .itemcontent{
@@ -17,7 +18,7 @@
     border-bottom: 5px solid rgb(5, 4, 4);
 }
 .itemcontent:hover{
- transform: scale(1.2);
+ transform: scale(1.1);
 }
 .productimage{
     width: 5rem;
@@ -53,4 +54,17 @@ button:active{
 h1{
     font-size: 1rem;
     color: black;
+}
+
+@media screen and (max-width:800px){
+    .item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .itemcontent{
+        width:50%;
+        height: 17rem;
+    }
 }
