@@ -1,11 +1,10 @@
 
-//import { element } from "prop-types";
-//import { element } from "prop-types";
-//import { element } from "prop-types";
-import HomePage from "./HomePage";
-import Shop from "./shopPage";
-import Cart from "./cart";
+
+import { HomePage,Shop,Cart } from "./lazyComponents";
+import { routePaths } from "./routes.config";
+import LazyWrapper from "./lazyWrapper";
 import Layout from "./layout";
+
 
 
 
@@ -17,23 +16,35 @@ const routes=[
 
 
     {
-        path:"/",
+        path: routePaths.home,
         element:<Layout/>,
         children: [
 
             {
                index: true,
-               element: <HomePage/>
+               element: (
+                <LazyWrapper>
+                    <HomePage/>
+                </LazyWrapper>
+               )
 
             },
 
             {
                 path:"shop",
-                element:<Shop/>
+                element: (
+                    <LazyWrapper>
+                        <Shop/>
+                    </LazyWrapper>
+                )
             },
             {
                 path:"cart",
-                element:<Cart/>
+                element:  (
+                    <LazyWrapper>
+                        <Cart/>
+                    </LazyWrapper>
+                )
             },
            
           
@@ -42,7 +53,7 @@ const routes=[
        
     }
     
-   
+
     
 ]
 

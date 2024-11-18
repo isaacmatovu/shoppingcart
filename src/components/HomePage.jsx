@@ -1,14 +1,35 @@
  import '../styles/Homepage.css'
  import img1 from '../images/happypeople.jpg'
- 
+import { useState } from 'react'
  
 
  export default function HomePage(){
+ 
+const fruits =["Mango","Fertile","Playstation"]
+
+const [getfruiits]= useState(fruits)
+const [searchterm,getsearch] = useState("")
+
+  function handleChange(e){
+     getsearch(e.target.value)
+
+     
+  }
+
+  
+
+  const filterItems= getfruiits.filter((fruit)=>fruit.toLowerCase().includes(searchterm.toLowerCase()))
+
+  
     return(
         <>
        
         <div className="homepage">
+           {filterItems?.map((fruit)=> (<p key={fruit}>{fruit}</p>))
+           
+           }
         <div className="container">
+           <input type='fruits' onChange={handleChange} value={searchterm}/>
             <div className="leftside">
                 <h1 className='header-txt'>Lets  carry your shopping</h1>
                 <p1 className='para1'>Come one come All</p1>
