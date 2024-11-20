@@ -1,5 +1,9 @@
+body{
+  background-color: rgb(59, 59, 59);
+}
 .homepage {
     padding: 1rem;
+   
   }
   
   .container {
@@ -7,20 +11,28 @@
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    color: #fff;
   }
   
   .leftside {
     text-align: center;
   }
+  .left-txt{
+    max-width: 50%;
+  }
   
   .header-txt {
     font-size: 2rem;
     margin-bottom: 1rem;
+    color: #fff;
   }
   
   .para1, .para2 {
-    font-size: 1rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
+  }
+  .para2{
+    max-width: 100px;
   }
   
   .rightside {
@@ -29,6 +41,7 @@
   
   .image1 {
     width: 100%;
+    max-width: 60rem;
     height: auto;
   }
   

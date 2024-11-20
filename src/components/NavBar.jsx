@@ -35,9 +35,6 @@ export default function NavBar(){
              <Link to="/cart"><ShoppingCart size={32} color='white' />{itemCount} </Link>
             </div>
         </div>
-        
-        
-        
         </>
     )
 }
