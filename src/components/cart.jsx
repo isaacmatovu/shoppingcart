@@ -35,7 +35,7 @@ function handlesubmit(){
               className="cart-item-image" />
               <div className="cart-item-details">
                 <h3 className='titlecart'>{item.title}</h3>
-                <p className='para-cart'>UGX {item.price * item.quantity}</p>
+                <p className='para-cart'>UGX :{item.price * item.quantity}</p>
                 <p className='para-cart'>Quantity :{item.quantity}</p>
                 <div className="quantity-controls"> 
                   <input
