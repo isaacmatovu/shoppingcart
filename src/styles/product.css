@@ -1,8 +1,9 @@
-.item{
+/* .item{
     padding: 3rem;
     background-color: #d33a3a;
     top: 5rem;
     padding-top: 6rem;
+    width: 100%;
    
     
 }
@@ -34,37 +35,6 @@ button:hover{
     color: black;
 }
 button:active{
-    animation: shiver 1000ms;
-}
-@keyframes shiver{
-    from{
-        transform: translateY(0);
-    }
-    to{
-        transform: translateY(50px);
-    }
+    animation: shiver 1000ms; 
 }
 
-.button{
-    display: flex;
-}
-.button input{
-    width: 2rem;
-}
-h1{
-    font-size: 1rem;
-    color: black;
-}
-
-@media screen and (max-width:800px){
-    .item{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-    .itemcontent{
-        width:50%;
-        height: 17rem;
-    }
-}
