@@ -1,1 +1,5 @@
 @import "tailwindcss";
+/* From Uiverse.io by kennyotsu */ 
+body{
+    background:#6a7282;
+}

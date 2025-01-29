@@ -1,8 +1,34 @@
-# React + Vite
+Welcome to our modern e-commerce platform built with React.js and styled using Tailwind CSS. This platform offers a responsive and intuitive shopping experience.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Tech Stack 🚀
 
-Currently, two official plugins are available:
+- React.js (Frontend Framework)
+- Tailwind CSS (Styling)
+- JavaScript (Programming Language)
+- React Router (Navigation)
+- Context API (State Management)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Current Features ✨
+
+- **Responsive Design**
+
+  - Mobile-first approach
+  - Seamless desktop/mobile transitions
+  - Optimal viewing on all devices
+
+- **Product Display**
+
+  - Dynamic product grid
+  - Product details view
+  - Image galleries
+
+- **Shopping Cart**
+
+  - Add/remove items
+  - Update quantities
+  - Cart persistence
+
+- **Order Management**
+  - Order history display
+  - Basic order tracking
+  - Purchase summaries

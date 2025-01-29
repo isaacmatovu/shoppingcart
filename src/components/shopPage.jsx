@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-
-import "../styles/shopPage.css";
 import Product from "./product";
 
 export default function Shop() {
@@ -59,7 +57,7 @@ export default function Shop() {
       )}
       {error && <p>{error}</p>}
       {products && !error & !loading && (
-        <div className="grid grid-cols-3 mt-20 gap-16">
+        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 mt-20 gap-16 m-16">
           {products.map((product) => (
             <>
               <Product key={product.id} product={product} />
