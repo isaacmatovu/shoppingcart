@@ -2,11 +2,16 @@ import { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import { CartContext } from "./context";
 import { Plus, Minus, ShoppingCart } from "lucide-react";
+import { useInView } from "react-intersection-observer";
 
 export default function Product({ product }) {
   const { title, image, price } = product;
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useContext(CartContext);
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   function handleSubtract() {
     if (quantity > 0) {
@@ -30,7 +35,14 @@ export default function Product({ product }) {
   }
 
   return (
-    <div className="group relative">
+    <div
+      ref={ref}
+      className={`group relative transition-all duration-700 ease-in-out transform ${
+        inView
+          ? "opacity-100 translate-y-0 scale-100"
+          : "opacity-0 translate-y-10 scale-95"
+      }`}
+    >
       <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl">
         {/* Image Container */}
         <div className="relative aspect-square overflow-hidden bg-gray-100">

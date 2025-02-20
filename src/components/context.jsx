@@ -1,11 +1,18 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 export const CartContext = createContext();
 
 export function CartProvider({ children }) {
-  const [cartItems, setCartItems] = useState([]);
-  /**add to cart***/
+  const [cartItems, setCartItems] = useState(() => {
+    const savedCartItems = localStorage.getItem("cartItems");
+    return savedCartItems ? JSON.parse(savedCartItems) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
+
   const addToCart = (product, quantity) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find((item) => item.id === product.id);
@@ -20,14 +27,12 @@ export function CartProvider({ children }) {
     });
   };
 
-  /****remove from the cart****/
   const removeFromCart = (productId) => {
     setCartItems((prevItems) =>
       prevItems.filter((item) => item.id !== productId)
     );
   };
 
-  /***update the input quantity ****/
   const updateQuantity = (productId, quantity) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
@@ -36,7 +41,6 @@ export function CartProvider({ children }) {
     );
   };
 
-  /***get the total price****/
   const getTotalPrice = () => {
     return cartItems.reduce(
       (total, item) => total + item.price * item.quantity,
@@ -45,7 +49,6 @@ export function CartProvider({ children }) {
   };
 
   const cartTotal = getTotalPrice();
-  /***get the total number of items****/
   const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (

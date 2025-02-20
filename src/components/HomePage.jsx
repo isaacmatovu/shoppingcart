@@ -1,5 +1,5 @@
 import { ChevronRight, Star, Truck } from "lucide-react";
-import img1 from "../images/happypeople.jpg";
+import img1 from "../images/happy.webp";
 
 const HomePage = () => {
   return (
