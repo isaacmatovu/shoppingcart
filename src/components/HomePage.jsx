@@ -1,7 +1,12 @@
 import { ChevronRight, Star, Truck } from "lucide-react";
 import img1 from "../images/happy.webp";
-
+import { useNavigate } from "react-router-dom";
 const HomePage = () => {
+  const navigate = useNavigate();
+
+  function handleStartShopping() {
+    navigate("/shop");
+  }
   return (
     <div className="min-h-screen bg-gray-500">
       {/* Hero Section */}
@@ -29,7 +34,10 @@ const HomePage = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center gap-2">
+                  <button
+                    onClick={handleStartShopping}
+                    className="px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center gap-2"
+                  >
                     Start Shopping
                     <ChevronRight size={20} />
                   </button>
