@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
-import { CartContext } from "./context";
+import { useState } from "react";
 import { Menu, X, ShoppingCart } from "lucide-react";
+import useCartStore from "./context";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { itemCount } = useContext(CartContext);
+  const { items } = useCartStore();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -49,7 +49,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/cart" className="flex items-center gap-2">
               <ShoppingCart size={32} color="black" />
-              <span className="text-black">{itemCount}</span>
+              <span className="text-black">{items.length}</span>
             </Link>
           </div>
         </div>
