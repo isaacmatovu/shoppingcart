@@ -1,13 +1,14 @@
 import { useState, useContext } from "react";
 import PropTypes from "prop-types";
-import { CartContext } from "./context";
+
 import { Plus, Minus, ShoppingCart } from "lucide-react";
 import { useInView } from "react-intersection-observer";
+import useCartStore from "./context";
 
 export default function Product({ product }) {
   const { title, image, price } = product;
   const [quantity, setQuantity] = useState(1);
-  const { addToCart } = useContext(CartContext);
+  const { addToCart } = useCartStore();
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
