@@ -1,12 +1,13 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "./context";
+
 import { Trash2, Plus, Minus, ArrowLeft, ShoppingBag } from "lucide-react";
+import useCartStore from "./context";
 
 export default function Cart() {
-  const { cartItems, removeFromCart, updateQuantity, cartTotal } =
-    useContext(CartContext);
+  const { items, removeFromCart, updateQuantity, getTotalPrice, clearCart } =
+    useCartStore();
 
+  const cartTotal = getTotalPrice();
   function handleSubmit() {
     if (cartTotal > 500000) {
       alert("Congratulations on your premium purchase!");
@@ -15,7 +16,7 @@ export default function Cart() {
     }
   }
 
-  if (cartItems.length === 0) {
+  if (items.length === 0) {
     return (
       <div className="min-h-screen bg-gray-500 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
@@ -46,10 +47,12 @@ export default function Cart() {
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold text-gray-900 mb-8">Shopping Cart</h2>
-
+        <button onClick={clearCart} className="text-white bg-black px-6 py-4">
+          Clear Cart
+        </button>
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
           <div className="divide-y divide-gray-200">
-            {cartItems.map((item) => (
+            {items.map((item) => (
               <div key={item.id} className="p-6">
                 <div className="flex gap-6">
                   <div className="flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32">
